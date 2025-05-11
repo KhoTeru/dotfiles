@@ -1,0 +1,87 @@
+window#waybar {
+        background-color: transparent;
+}
+
+.module {
+        font-family: Inter, JetBrainsMono Nerd Font, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 20px;
+        margin: 0px 5px;
+        padding: 0px 20px;
+        color: #3b4252;
+}
+
+#workspaces {
+        background-image: linear-gradient(120deg, rgba(254,166,237,1) 25%, rgba(246,128,132,1) 100%);
+        font-family: Symbols Nerd Font Mono;
+        font-size: 12px;
+}
+
+#workspaces button {
+        color: #3b4252;
+}
+
+/* Black magic fuckery, leave it like that to maintain consistency on the Workspace module */
+#workspaces button:hover {
+        background: none;
+        border: hidden;
+        transition: none;
+        padding: 0 7px;
+}
+
+#pulseaudio {
+        background-image: linear-gradient(120deg, rgba(246,128,132,1) 0%, rgba(246,161,128,1) 100%);
+        min-width: 70px;
+}
+
+tooltip label {
+        font-size: 14px;
+}
+
+#custom-gammastep {
+        background-image: linear-gradient(120deg, rgba(246,155,128,1) 26%, rgba(255,214,136,1) 100%);
+        min-width: 40px;
+}
+
+#clock {
+        background-image: linear-gradient(120deg, rgba(255,214,136,1) 30%, rgba(255,255,136,1) 100%);
+        min-width:200px;
+}
+
+#tray {
+        background-color: transparent;
+        padding: 0px 5px;
+}
+
+#tray menu {
+        font-size: 14px;
+        font-weight: normal;
+}
+
+#idle_inhibitor {
+        background-image: linear-gradient(120deg, rgba(255,255,136,1) 30%, rgba(136,255,200,1) 85%);
+        min-width: 50px;
+}
+
+#custom-target {
+        background-image: linear-gradient(120deg, rgba(136,255,200,1) 0%, rgba(136,255,255,1) 100%);
+        min-width: 120px;
+}
+
+#network {
+        background-image: linear-gradient(125deg, rgba(136,200,255,1) 0%, rgba(136,136,255,1) 100%);
+        min-width: 120px;
+}
+
+#network.vpn {
+        background-image: linear-gradient(120deg, rgba(136,255,255,1) 0%, rgba(136,200,255,1) 100%);
+}
+
+/* Configuration for disabled / muted modules */
+
+#pulseaudio.muted, #custom-gammastep.off, #idle_inhibitor.deactivated, #custom-target.off, #network.disconnected {
+        background-image: none;
+        background: #3b4252;
+        color: #7988a6;
+}

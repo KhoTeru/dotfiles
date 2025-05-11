@@ -1,0 +1,42 @@
+#!/bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d I II III IV V
+
+bspc config normal_border_color  "#292e39"
+bspc config focused_border_color "#4c566a"
+bspc config split_ratio          0.5
+bspc config gapless_monocle      true
+bspc config window_gap           10
+bspc config border_width         2
+bspc config focus_follows_pointer true
+
+# Specific rules depending on WM_CLASS atribute
+bspc rule -a KeePassXC state=floating
+bspc rule -a Gimp state=floating follow=on
+bspc rule -a Pavucontrol state=floating
+bspc rule -a file-roller state=floating
+bspc rule -a Nemo state=floating
+bspc rule -a firefox:*:Picture-in-Picture state=floating
+bspc rule -a firefox-nightly state=tiled
+bspc rule -a pavucontrol state=floating
+
+xsetroot -cursor_name left_ptr
+wmname LG3D
+export QT_QPA_PLATFORMTHEME=gtk2
+
+feh --bg-scale --no-fehbg /home/teru/Pictures/masks.png
+polybar.sh bspwm &
+#picom > /tmp/picom.log &
+dunst > /tmp/dunst.log &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+#xset dpms 600 600 600 &
+#xautolock -time 15 -locker "systemctl suspend" -detectsleep &
+
+#pidof caffeine-ng > /dev/null || caffeine &
+#pidof keepassxc > /dev/null || sleep 3 && firejail keepassxc &
+#pidof localsend > /dev/null || localsend autostart &
+#pidof kdeconnectd > /dev/null || kdeconnectd &
+#pidof kdeconnect-indicator > /dev/null || kdeconnect-indicator &

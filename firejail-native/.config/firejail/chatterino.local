@@ -1,0 +1,6 @@
+# Enable Streamlink settings
+noblacklist ${HOME}/.config/streamlink
+whitelist ${HOME}/.config/streamlink
+private-etc mpv
+#noblacklist /etc/mpv
+#whitelist /etc/mpv

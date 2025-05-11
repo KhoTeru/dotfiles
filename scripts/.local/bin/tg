@@ -1,0 +1,111 @@
+#!/bin/sh
+
+TARGET="$XDG_STATE_HOME/tg"
+IP_ADDRESS=$(cat "$TARGET" 2>/dev/null)
+HAS_TARGET=$([ "$IP_ADDRESS" = "No target" ])
+
+format_target_polybar()
+{
+        if [ "$IP_ADDRESS" = "No target" ]; then
+                echo '%{F#5e81ac}%{T4}  %{T-}No target%{F-}'
+        else
+                echo "%{F#bf616a}%{T4}  %{T-}$IP_ADDRESS%{F-}"
+        fi
+}
+
+format_target_waybar()
+{
+        if [ "$IP_ADDRESS" = "No target" ]; then
+                CLASS=off
+        else
+                CLASS=on
+        fi
+        echo "{\"text\": \"<span face=\\\"Font Awesome 6 Free Solid\\\"></span>  $IP_ADDRESS\", \"class\": \"$CLASS\"}"
+}
+
+check_target()
+{
+        echo -n "$IP_ADDRESS"
+}
+
+# clear_target()
+# {
+# }
+#
+# set_target() {
+#     return 0
+# }
+
+clear_target()
+{
+        echo 'No target' > "$TARGET"
+}
+
+set_target()
+{
+        echo "$2" > "$TARGET"
+}
+
+copy_target()
+{
+        if [ "$IP_ADDRESS" = "No target" ]; then
+                notify-send 'Copy failed!' 'No IP address selected as target' -t 3000
+                return 1;
+        fi
+
+        if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+                wl-copy $IP_ADDRESS
+        else
+                echo -n $IP_ADDRESS | xclip -sel clip
+        fi
+        notify-send -i /usr/share/icons/Papirus-Dark/24x24/panel/network-vpn.svg 'Copy succesful!' 'IP address copied to clipboard' -t 3000
+}
+
+print_usage()
+{
+        cat << EOF
+tg: Utility to set targets' IPs and format them to status bars.
+
+Usage: tg <COMMAND>
+
+Commands:
+    check
+    clear
+    set
+    copy
+    format [polybar|waybar]
+EOF
+}
+
+case "$1" in
+        "check")
+                check_target
+                ;;
+        "clear")
+                clear_target
+                ;;
+        "set")
+                set_target "$@"
+                ;;
+        "copy")
+                copy_target
+                ;;
+        "format")
+                case "$2" in
+                        "polybar")
+                                format_target_polybar
+                                ;;
+                        "waybar")
+                                format_target_waybar
+                                ;;
+                        *)
+                                print_usage
+                                exit 1
+                                ;;
+                esac
+                ;;
+        *)
+                print_usage
+                exit 1
+                ;;
+esac

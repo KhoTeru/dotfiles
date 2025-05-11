@@ -1,0 +1,9 @@
+clear
+q
+quit
+set status_display_program=cmusfm
+colorscheme base16-nord
+colorscheme base16-onedark
+live-filter 
+colorscheme tokyo-night
+colorscheme tokyo-noght

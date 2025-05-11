@@ -1,0 +1,26 @@
+#!/bin/sh
+
+PORTS=$(grep -oP '\d{1,5}/open' "$1" | sed 's#/open##' | paste -sd,)
+IP_ADDRESS=$(awk 'NR == 1{print $NF}' "$1")
+
+copyPorts()
+{
+        if [ -z "$WAYLAND_DISPLAY" ]; then
+                echo -n "$PORTS" | xclip -sel clip >&/dev/null;
+        else
+                wl-clip "$PORTS"
+        fi
+}
+
+ePorts()
+{
+        copyPorts
+        echo -e "
+        [+] Printing information...\n
+        \t[+] IP Address: $IP_ADDRESS
+        \t[+] Open ports: $PORTS\n
+        [+] Ports copied to clipboard!\n
+        " | bat
+}
+
+ePorts "$1"

@@ -1,0 +1,12 @@
+[Unit]
+Description=Lock screen before suspending
+Before=sleep.target
+
+[Service]
+User=teru
+Type=simple
+Environment=DISPLAY=:0
+ExecStart=/home/teru/.config/scripts/lock.sh
+
+[Install]
+WantedBy=sleep.target

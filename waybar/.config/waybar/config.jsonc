@@ -1,0 +1,130 @@
+{
+        "layer": "top",
+        "position": "top",
+        "height": 30,
+        "width": 1900,
+        "spacing": 0, // Gaps between modules
+        "margin-top": 10,
+        "margin-bottom": 0,
+        "mode": "dock",
+
+        "modules-left": [
+                "hyprland/workspaces",
+                "pulseaudio",
+                "custom/gammastep"
+        ],
+        "modules-center": [
+                "clock"
+        ],
+        "modules-right": [
+                "tray",
+                "idle_inhibitor",
+                "group/ip"
+        ],
+
+// Modules configuration
+
+        "custom/gammastep": {
+                "exec": "redlight.sh check",
+                "exec-on-event": false,
+                "return-type": "json",
+                "signal": 1,
+                "format": "{}",
+                "on-click": "redlight.sh toggle; pkill -SIGRTMIN+1 waybar",
+                "tooltip": false
+        },
+
+        "custom/target": {
+                "exec": "tg format waybar",
+                "interval": 1,
+                "exec-on-event": false,
+                "return-type": "json",
+                "signal": 2,
+                "format": "{}",
+                "on-click": "tg copy; pkill -SIGRTMIN+2 waybar",
+                "tooltip": false
+        },
+
+        "clock": {
+                "format": "<span face=\"Font Awesome 6 Free Solid\">  </span>{:%B %d, %Y<span face=\"Font Awesome 6 Free Solid\">     </span>%R}",
+                "format-alt": "<span face=\"Font Awesome 6 Free Solid\">  </span>Today is {:%A}",
+                "tooltip-format": "<tt><span size=\"10pt\">{calendar}</span></tt>",
+                "calendar": {
+                    "on-scroll"     : 1,
+                    "on-click-right": "mode",
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        },
+
+        "group/ip": {
+                "orientation": "horizontal",
+                "drawer": {
+                        "transition-duration": 500,
+                        "transition-left-to-right": false,
+                },
+                "modules": [
+                        "network",
+                        "custom/target",
+                        "network#vpn"
+                ]
+        },
+
+        "hyprland/workspaces": {
+                "all-outputs": true,
+                "format": "<span rise=\"-12pt\">{icon}</span>",
+                "format-icons": {
+                        "empty": "",
+                        "persistent": "󰊠",
+                        "active": "󰮯",
+                },
+
+                "persistent-workspaces": {
+                        "*": 5
+                }
+        },
+
+        "idle_inhibitor": {
+                "format": "{icon}",
+                "format-icons": {
+                        "activated": "<span face=\"Symbols Nerd Font Mono\">󰈈  </span>On",
+                        "deactivated": "<span face=\"Symbols Nerd Font Mono\">󰈉  </span>Off"
+                },
+                "tooltip": false
+        },
+
+        "network": {
+                "interface": "enp*",
+                "format": "<span face=\"Font Awesome 6 Free Solid\">  </span>{ipaddr}",
+                "format-disconnected": "<span face=\"Font Awesome 6 Free Solid\">  </span>Disconnected",
+                "tooltip": false
+        },
+
+        "network#vpn": {
+                "interface": "tun0",
+                "format": "<span face=\"Font Awesome 6 Free Solid\" rise=\"2pt\">󰿂 </span> <span rise=\"1pt\">{ipaddr}</span>",
+                "format-disconnected": "<span face=\"Font Awesome 6 Free Solid\" rise=\"2pt\">󰿂 </span> <span rise=\"1pt\">Disconnected</span>",
+                "tooltip": false
+        },
+
+        "pulseaudio": {
+                "format": "<span size=\"14pt\">{icon}</span><span rise=\"1500\">    {volume}%</span>",
+                "format-muted": "<span size=\"14pt\">󰝟</span><span rise=\"1500\">    Muted</span>",
+                "format-icons": {
+                        "default": ["󰕿", "󰖀", "󰕾"]
+                },
+                "scroll-step": 5,
+                "on-click": "pactl set-sink-mute 0 toggle",
+                "on-click-middle": "pavucontrol",
+                "tooltip-format": "{desc}"
+        },
+
+        "tray": {
+                "icon-size": 20,
+                "spacing": 10
+        }
+}
