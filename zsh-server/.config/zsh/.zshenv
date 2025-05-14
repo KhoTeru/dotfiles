@@ -36,7 +36,7 @@ export FZF_DEFAULT_OPTS='--color=fg:#c0caf5,hl:#ff9e64
 --color=marker:#9ece6a,spinner:#9ece6a,header:#9ece6a'
 
 # Pager options
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
 export MANROFFOPT='-c'
 
 # Editor
