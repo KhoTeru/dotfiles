@@ -2,7 +2,7 @@ return {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
         opts = {
-                ensure_installed = { "vim", "vimdoc", "bash", "lua", "c", "python", "norg", "hyprlang" },
+                ensure_installed = { "vim", "vimdoc", "bash", "lua", "c", "python" },
                 sync_install = false,
                 auto_install = true,
                 highlight = {
