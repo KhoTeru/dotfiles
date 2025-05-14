@@ -3,5 +3,5 @@ player-args=--profile=streamlink
 verbose-player
 default-stream=1080p60,1080p,720p60,720p,best
 
-#twitch-low-latency
-#twitch-disable-ads
+twitch-low-latency
+twitch-disable-ads
