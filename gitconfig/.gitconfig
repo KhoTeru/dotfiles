@@ -1,0 +1,9 @@
+[init]
+        defaultBranch = main
+[user]
+	email = 36055140+KhoTeru@users.noreply.github.com
+	name = Teru
+[core]
+	editor = nvim
+[color]
+	ui = true
