@@ -45,18 +45,11 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-# Functions and aliases
+# Functions, aliases and plugins
 
-source "$ZDOTDIR"/.functions.sh
-source "$ZDOTDIR"/.aliases.sh
-
-# Plugins
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source "$ZDOTDIR"/.functions
+source "$ZDOTDIR"/.aliases
+source "$ZDOTDIR"/.plugins
 
 # Zoxide support
 
@@ -66,6 +59,6 @@ eval "$(zoxide init zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 
 if (( terminfo[colors] >= 256 )); then
-        source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+        source "$ZDOTDIR"/.p10ksource
         [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 fi
