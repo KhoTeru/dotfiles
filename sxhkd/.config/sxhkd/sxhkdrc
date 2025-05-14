@@ -20,6 +20,10 @@ super + Escape
 super + ctrl + alt + f
 	firejail firefox-nightly
 
+# Mullvad launcher
+super + ctrl + alt + m
+	firejail mullvad-browser
+
 # KeePassXC launcher
 super + ctrl + alt + k
 	keepassxc
