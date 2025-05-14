@@ -1,2 +1,3 @@
-# Syncthing folder
+# Syncthing files
 .stfolder/
+.stignore
