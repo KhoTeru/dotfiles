@@ -14,7 +14,7 @@ export XDG_STATE_HOME="$HOME"/.local/state
 export XDG_CACHE_HOME="$HOME"/.cache
 
 # Path
-export PATH="$PATH":"$XDG_DATA_HOME"/cargo/bin:"$HOME"/.local/bin
+export PATH="$PATH":"$XDG_DATA_HOME"/cargo/bin:"$HOME"/.local/bin:/opt/nvim-linux-x86_64/bin
 
 # Config directories
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
