@@ -1,4 +1,5 @@
 # Tips
+- Add 'AddKeysToAgent' to '~/.ssh/config'.
 - Add the following services after the installation:
     - [ ] ssh-agent (user) -> Also `ssh-add` the key to the agent.
 
