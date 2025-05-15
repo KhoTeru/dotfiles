@@ -1,5 +1,5 @@
 # autorandr Default &
-feh --no-fehbg --bg-fill $HOME/Syncthing/Pictures/Wallpapers/masks.png &
+feh --no-fehbg --bg-fill $HOME/Sync/Pictures/Wallpapers/masks.png &
 picom -b &
 polybar.sh openbox &
 dunst &

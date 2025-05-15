@@ -7,7 +7,7 @@ export AWT_TOOLKIT=MToolKit
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # XDG Directories
-export XDG_SCREENSHOTS_DIR="$HOME"/Syncthing/Pictures/Screenshots
+export XDG_SCREENSHOTS_DIR="$HOME"/Sync/Pictures/Screenshots
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_STATE_HOME="$HOME"/.local/state

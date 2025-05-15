@@ -26,7 +26,7 @@ xsetroot -cursor_name left_ptr
 wmname LG3D
 export QT_QPA_PLATFORMTHEME=gtk2
 
-feh --bg-scale --no-fehbg /home/teru/Pictures/masks.png
+feh --bg-scale --no-fehbg /home/teru/Sync/Pictures/masks.png
 polybar.sh bspwm &
 #picom > /tmp/picom.log &
 dunst > /tmp/dunst.log &
