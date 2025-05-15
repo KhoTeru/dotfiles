@@ -7,7 +7,7 @@ export AWT_TOOLKIT=MToolKit
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # XDG Directories
-export XDG_SCREENSHOTS_DIR="$HOME"/Syncthing/Pictures/Screenshots
+export XDG_SCREENSHOTS_DIR="$HOME"/Sync/Pictures/Screenshots
 export XDG_DATA_HOME="$HOME"/.local/share
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_STATE_HOME="$HOME"/.local/state
@@ -28,7 +28,6 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 #export PYTHONSTARTUP=/etc/python/pythonrc
 
 # Themes
-export GTK_THEME=Arc-Dark
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
 export QT_STYLE_OVERRIDE=kvantum
 export XCURSOR_PATH="$XDG_DATA_HOME"/icons:"$HOME"/.icons:/usr/share/icons
@@ -50,4 +49,3 @@ export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME"/nv
 export OMPI_MCA_opal_warn_on_missing_libcuda=0
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
