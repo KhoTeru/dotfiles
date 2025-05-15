@@ -1,7 +1,7 @@
 {
         "layer": "top",
         "position": "top",
-        "height": 30,
+        "height": 35,
         "width": 1900,
         "spacing": 0, // Gaps between modules
         "margin-top": 10,
@@ -99,8 +99,8 @@
 
         "network": {
                 "interface": "enp*",
-                "format": "<span face=\"Font Awesome 6 Free Solid\">  </span>{ipaddr}",
-                "format-disconnected": "<span face=\"Font Awesome 6 Free Solid\">  </span>Disconnected",
+                "format": "<span face=\"Font Awesome 6 Free Solid\">  </span>{ipaddr}",
+                "format-disconnected": "<span face=\"Font Awesome 6 Free Solid\">  </span>Disconnected",
                 "tooltip": false
         },
 
