@@ -1,5 +1,4 @@
-# firefox requires a shell to launch on Arch - add the next line to your firefox.local to enable private-bin.
-private-bin bash,dbus-launch,dbus-send,env,firefox,sh,which,keepassxc-proxy
-# Add the next line to your firefox.local to enable private-etc support - note that this must be enabled in your firefox-common.local too.
-private-etc firefox
-private-opt firefox
+# Note: Firefox requires a shell to launch on Arch and Fedora.
+# Add the next lines to firefox.local to enable private-bin.
+private-bin bash,dbus-launch,dbus-send,env,firefox,sh,which
+#private-bin basename,bash,cat,dirname,expr,false,firefox,firefox-wayland,getenforce,ln,mkdir,pidof,restorecon,rm,rmdir,sed,sh,tclsh,true,uname
