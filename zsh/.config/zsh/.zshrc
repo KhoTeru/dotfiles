@@ -55,6 +55,10 @@ source "$ZDOTDIR"/.plugins
 
 eval "$(zoxide init zsh)"
 
+# SSH Agent support
+
+eval "$(ssh-agent)" >/dev/null
+
 # Powerlevel10k sourcing
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 
