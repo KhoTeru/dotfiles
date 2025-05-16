@@ -3,5 +3,12 @@
 noblacklist ${HOME}/.mozilla
 whitelist ${HOME}/.mozilla
 
+# Pipewire pulse support
+whitelist ${RUNUSER}/pipewire-0
+whitelist ${RUNUSER}/pulse/native
+
+# Wayland native
+whitelist ${RUNUSER}/wayland-1
+
 # Private bin
 private-bin bash,dbus-launch,dbus-send,env,zen-browser,sh,which

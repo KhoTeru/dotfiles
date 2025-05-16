@@ -1,0 +1,5 @@
+blacklist ${DOWNLOADS}
+ignore whitelist ${DOWNLOADS}
+
+noblacklist ${DOCUMENTS}
+whitelist ${DOCUMENTS}
