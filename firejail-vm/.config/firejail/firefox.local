@@ -1,4 +1,0 @@
-# Add the next line to your firefox.local to enable native notifications.
-dbus-user.talk org.freedesktop.Notifications
-# Add the next line to your firefox.local to allow inhibiting screensavers.
-dbus-user.talk org.freedesktop.ScreenSaver
