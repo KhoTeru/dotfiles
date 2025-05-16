@@ -1,2 +1,5 @@
-vmware-user &
+#vmware-user &
+spice-vdagent &
+clipmenud &
+
 exec bspwm
