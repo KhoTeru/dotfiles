@@ -57,7 +57,7 @@ eval "$(zoxide init zsh)"
 
 # SSH Agent support
 
-pidof ssh-agent >/dev/null || eval "$(ssh-agent)"
+pidof ssh-agent >/dev/null || eval "$(ssh-agent)" >/dev/null
 
 # Powerlevel10k sourcing
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
