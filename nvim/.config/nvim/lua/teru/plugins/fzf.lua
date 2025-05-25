@@ -6,7 +6,15 @@ return {
         },
         config = function()
 
-                require("fzf-lua").setup({ files = { cwd_prompt = false }})
+                require("fzf-lua").setup({
+                        files = {
+                                cwd_prompt = false,
+                                follow = true
+                        },
+                        grep = {
+                                follow = true
+                        }
+                })
                 local builtin = require("fzf-lua")
 
                 vim.keymap.set("n", "<Leader>pf", builtin.files, {})
