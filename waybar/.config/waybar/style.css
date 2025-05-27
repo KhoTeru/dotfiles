@@ -3,84 +3,77 @@ window#waybar {
 }
 
 .module {
-        font-family: Inter, JetBrainsMono Nerd Font, Arial, sans-serif;
-        font-size: 14px;
+        font-size: 15px;
+        font-family: "JetBrainsMono NFM";
         font-weight: bold;
+        color: #3b4252;
+
         border-radius: 20px;
         margin: 0px 5px;
         padding: 0px 20px;
-        color: #3b4252;
 }
 
 #workspaces {
+        font-size: 18px;
         background-image: linear-gradient(120deg, rgba(254,166,237,1) 25%, rgba(246,128,132,1) 100%);
-        font-family: Symbols Nerd Font Mono;
-        font-size: 12px;
-}
-
-#workspaces button {
-        color: #3b4252;
 }
 
 /* Black magic fuckery, leave it like that to maintain consistency on the Workspace module */
 #workspaces button:hover {
+        box-shadow: none;
         background: none;
         border: hidden;
+        text-shadow: unset;
         transition: none;
-        padding: 0 7px;
+        padding: 0 10px;
 }
 
 #pulseaudio {
         background-image: linear-gradient(120deg, rgba(246,128,132,1) 0%, rgba(246,161,128,1) 100%);
-        min-width: 70px;
+        min-width: 75px;
 }
 
-tooltip label {
-        font-size: 14px;
-}
-
-#custom-gammastep {
+#custom-redlight {
         background-image: linear-gradient(120deg, rgba(246,155,128,1) 26%, rgba(255,214,136,1) 100%);
-        min-width: 40px;
+       min-width: 45px;
 }
 
 #clock {
         background-image: linear-gradient(120deg, rgba(255,214,136,1) 30%, rgba(255,255,136,1) 100%);
-        min-width:200px;
+        min-width:205px;
 }
 
 #tray {
-        background-color: transparent;
         padding: 0px 5px;
 }
 
 #tray menu {
-        font-size: 14px;
-        font-weight: normal;
+        font-size: 10px;
 }
 
 #idle_inhibitor {
-        background-image: linear-gradient(120deg, rgba(255,255,136,1) 30%, rgba(136,255,200,1) 85%);
-        min-width: 50px;
+        background-image: linear-gradient(120deg, rgba(255,255,136,1) 30%, rgba(136,255,200,1) 100%);
+        min-width: 55px;
 }
 
 #custom-target {
         background-image: linear-gradient(120deg, rgba(136,255,200,1) 0%, rgba(136,255,255,1) 100%);
-        min-width: 120px;
+        min-width: 145px;
 }
 
 #network {
         background-image: linear-gradient(125deg, rgba(136,200,255,1) 0%, rgba(136,136,255,1) 100%);
-        min-width: 120px;
+        min-width: 145px;
 }
 
 #network.vpn {
         background-image: linear-gradient(120deg, rgba(136,255,255,1) 0%, rgba(136,200,255,1) 100%);
+        min-width: 145px;
 }
 
 /* Configuration for disabled / muted modules */
 
-#pulseaudio.muted, #custom-gammastep.off, #idle_inhibitor.deactivated, #custom-target.off, #network.disconnected {
+#pulseaudio.muted, #custom-redlight.off, #idle_inhibitor.deactivated, #custom-target.off, #network.disconnected {
         background-image: none;
         background: #3b4252;
         color: #7988a6;

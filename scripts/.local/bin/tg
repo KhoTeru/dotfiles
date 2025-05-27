@@ -16,11 +16,10 @@ format_target_polybar()
 format_target_waybar()
 {
         if [ "$IP_ADDRESS" = "No target" ]; then
-                CLASS=off
+                echo "{\"text\": \"<span size=\\\"x-large\\\"></span> <span face=\\\"Inter\\\" rise=\\\"2500\\\">No target</span>\", \"class\": \"off\"}"
         else
-                CLASS=on
+                echo "{\"text\": \"<span size=\\\"x-large\\\"></span> <span face=\\\"Inter\\\" rise=\\\"2500\\\">$IP_ADDRESS</span>\"}"
         fi
-        echo "{\"text\": \"<span face=\\\"Font Awesome 6 Free Solid\\\"></span>  $IP_ADDRESS\", \"class\": \"$CLASS\"}"
 }
 
 check_target()
@@ -39,11 +38,13 @@ check_target()
 clear_target()
 {
         echo 'No target' > "$TARGET"
+        pidof waybar >/dev/null && pkill -SIGRTMIN+2 waybar
 }
 
 set_target()
 {
         echo "$2" > "$TARGET"
+        pidof waybar >/dev/null && pkill -SIGRTMIN+2 waybar
 }
 
 copy_target()

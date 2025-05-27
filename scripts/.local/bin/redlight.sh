@@ -1,11 +1,11 @@
 #!/bin/sh
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
-        TOGGLE=toggleGammastep
-        STATE=$XDG_STATE_HOME/gammastep
+                TOGGLE=toggleWaylight
+                STATE="$XDG_STATE_HOME"/waylight
 else
         TOGGLE=toggleRedshift
-        STATE=$XDG_STATE_HOME/redshift
+        STATE="$XDG_STATE_HOME"/redshift
 fi
 
 checkRedlight()
@@ -13,24 +13,26 @@ checkRedlight()
         cat $STATE 2>/dev/null || echo "[!] No state file available. Create one with redlight.sh toggle!"
 }
 
-toggleGammastep()
-{
-        if [ -z $(pgrep -x gammastep) ]
-        then
-                gammastep &
-                echo '{"text": "<span face=\"Font Awesome 6 Free Solid\"></span>  On", "class": "on"}' > "$STATE"
+toggleWaylight() {
+        ! pidof hyprsunset >/dev/null && echo "[!] hyprsunset isn't running! Exiting..." && exit 1
+
+        if cat $STATE |grep "Off" >/dev/null ; then
+                hyprctl hyprsunset temperature 3600 >/dev/null &&
+                        echo '{"text": "<span size=\"large\"></span> <span face=\"Inter\">On</span>"}' > "$STATE"
         else
-                pkill gammastep
-                echo '{"text": "<span face=\"Font Awesome 6 Free Solid\"></span>  Off", "class": "off"}' > "$STATE"
+                hyprctl hyprsunset identity >/dev/null &&
+                        echo '{"text": "<span size=\"large\"></span> <span face=\"Inter\">Off</span>", "class": "off"}' > "$STATE"
         fi
+        pkill -SIGRTMIN+1 waybar
 }
 
 toggleRedshift()
 {
         if [ -z $(pgrep -x redshift) ]
         then
-                redshift &
                 echo '%{F#ef9a9a}%{T4}  %{T-}On%{F-}' > "$STATE"
+                kitty
+                redshift
         else
                 pkill redshift
                 echo '%{F#5e81ac}%{T4}  %{T-}Off%{F-}' > "$STATE"
@@ -45,6 +47,6 @@ case $1 in
                 $TOGGLE
                 ;;
         *)
-                echo "Select an option from below as a second argument:\n\tcheck\n\ttoggle"
+                echo -e "Select an option from below as a second argument:\n\tcheck\n\ttoggle"
                 exit 1
 esac

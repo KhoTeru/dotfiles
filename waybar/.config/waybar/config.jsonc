@@ -1,7 +1,7 @@
 {
         "layer": "top",
         "position": "top",
-        "height": 35,
+        "height": 40,
         "width": 1900,
         "spacing": 0, // Gaps between modules
         "margin-top": 10,
@@ -11,52 +11,49 @@
         "modules-left": [
                 "hyprland/workspaces",
                 "pulseaudio",
-                "custom/gammastep"
+                "custom/redlight",
+                "tray",
         ],
         "modules-center": [
-                "clock"
+                "clock",
         ],
         "modules-right": [
-                "tray",
                 "idle_inhibitor",
-                "group/ip"
+                "group/ip",
         ],
 
 // Modules configuration
 
-        "custom/gammastep": {
+        "custom/redlight": {
                 "exec": "redlight.sh check",
                 "exec-on-event": false,
                 "return-type": "json",
                 "signal": 1,
-                "format": "{}",
-                "on-click": "redlight.sh toggle; pkill -SIGRTMIN+1 waybar",
+                "on-click": "redlight.sh toggle",
                 "tooltip": false
         },
 
         "custom/target": {
                 "exec": "tg format waybar",
-                "interval": 1,
                 "exec-on-event": false,
                 "return-type": "json",
                 "signal": 2,
-                "format": "{}",
-                "on-click": "tg copy; pkill -SIGRTMIN+2 waybar",
+                "on-click": "tg copy",
                 "tooltip": false
         },
 
         "clock": {
-                "format": "<span face=\"Font Awesome 6 Free Solid\">  </span>{:%B %d, %Y<span face=\"Font Awesome 6 Free Solid\">     </span>%R}",
-                "format-alt": "<span face=\"Font Awesome 6 Free Solid\">  </span>Today is {:%A}",
-                "tooltip-format": "<tt><span size=\"10pt\">{calendar}</span></tt>",
+                "format": "<span size=\"x-large\"></span> <span face=\"Inter\" rise=\"2000\">{:%F</span><span size=\"x-large\">  </span> <span face=\"Inter\" rise=\"2000\">%R}</span>",
+                "format-alt": "<span size=\"x-large\"></span> <span face=\"Inter\" rise=\"2000\">Today is {:%A}</span>",
+                "tooltip-format": "{calendar}",
                 "calendar": {
                     "on-scroll"     : 1,
                     "on-click-right": "mode",
                     "format": {
-                              "months":     "<span color='#ffead3'><b>{}</b></span>",
-                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              "months":     "{}",
+                              "weekdays":   "{}",
+                              "days":       "{}",
+                              "today":      "{}"
                               }
                     },
         },
@@ -76,7 +73,7 @@
 
         "hyprland/workspaces": {
                 "all-outputs": true,
-                "format": "<span rise=\"-12pt\">{icon}</span>",
+                "format": "{icon}",
                 "format-icons": {
                         "empty": "",
                         "persistent": "󰊠",
@@ -91,31 +88,32 @@
         "idle_inhibitor": {
                 "format": "{icon}",
                 "format-icons": {
-                        "activated": "<span face=\"Symbols Nerd Font Mono\">󰈈  </span>On",
-                        "deactivated": "<span face=\"Symbols Nerd Font Mono\">󰈉  </span>Off"
+                        "activated": "<span size=\"xx-large\">󰈈 </span><span face=\"Inter\" rise=\"3500\">On</span>",
+                        "deactivated": "<span size=\"xx-large\">󰈉 </span><span face=\"Inter\" rise=\"3500\">Off</span>"
                 },
                 "tooltip": false
         },
 
         "network": {
-                "interface": "enp*",
-                "format": "<span face=\"Font Awesome 6 Free Solid\">  </span>{ipaddr}",
-                "format-disconnected": "<span face=\"Font Awesome 6 Free Solid\">  </span>Disconnected",
+                "format-ethernet": "<span size=\"x-large\"></span> <span face=\"Inter\" rise=\"2000\">{ipaddr}</span>",
+                "format-wifi": "<span size=\"x-large\"></span> <span face=\"Inter\" rise=\"2000\">{ipaddr}</span>",
+                "format": "<span size=\"x-large\">󰌙</span> <span face=\"Inter\" rise=\"2000\">Unavailable</span>",
+                "format-disconnected": "<span size=\"x-large\"󰖪</span> <span face=\"Inter\" rise=\"2000\">Disconnected</span>",
                 "tooltip": false
         },
 
         "network#vpn": {
                 "interface": "tun0",
-                "format": "<span face=\"Font Awesome 6 Free Solid\" rise=\"2pt\">󰿂 </span> <span rise=\"1pt\">{ipaddr}</span>",
-                "format-disconnected": "<span face=\"Font Awesome 6 Free Solid\" rise=\"2pt\">󰿂 </span> <span rise=\"1pt\">Disconnected</span>",
+                "format": "<span size=\"x-large\">󰿂</span> <span face=\"Inter\" rise=\"2000\">{ipaddr}</span>",
+                "format": "<span size=\"x-large\">󰿂</span> <span face=\"Inter\" rise=\"2000\">Disconnected</span>",
                 "tooltip": false
         },
 
         "pulseaudio": {
-                "format": "<span size=\"14pt\">{icon}</span><span rise=\"1500\">    {volume}%</span>",
-                "format-muted": "<span size=\"14pt\">󰝟</span><span rise=\"1500\">    Muted</span>",
+                "format": "<span size=\"xx-large\">{icon}</span> <span face=\"Inter\" rise=\"4000\">{volume}%</span>",
+                "format-muted": "<span size=\"xx-large\"></span> <span face=\"Inter\" rise=\"4000\">Muted</span>",
                 "format-icons": {
-                        "default": ["󰕿", "󰖀", "󰕾"]
+                        "default": ["", "", ""]
                 },
                 "scroll-step": 5,
                 "on-click": "pactl set-sink-mute 0 toggle",
