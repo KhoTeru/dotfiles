@@ -33,5 +33,7 @@ alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings
 alias tree="tree -C"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 alias stow="stow -v --no-folding"
-alias sxp="searchsploit"
 alias H="Hyprland"
+
+alias sxp="searchsploit"
+alias nc="nc -v"
