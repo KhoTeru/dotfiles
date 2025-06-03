@@ -33,7 +33,9 @@ alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings
 alias tree="tree -C"
 alias wget="wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
 alias stow="stow -v --no-folding"
+
 alias H="Hyprland"
+alias KDE="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland"
 
 alias sxp="searchsploit"
 alias nc="nc -v"
