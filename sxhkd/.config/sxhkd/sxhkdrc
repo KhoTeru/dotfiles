@@ -8,7 +8,7 @@ super + Return
         kitty -1
 
 # program launcher
-super + @space
+super + alt + @space
 	rofi -show drun
 
 # make sxhkd reload its configuration files:
