@@ -28,4 +28,6 @@ nmap -p$(grep -oP '\d{1,5}/open' tcpPorts | sed 's#/open##' | paste -sd,) -sCV $
 echo -e "\n[+] Performing UDP scan..."
 sudo nmap --top-ports 100 -T4 --min-rate 10000 -sU $(tg check) -n -Pn -oN udpPorts -vvv
 
+bat -l ruby targeted
+
 exit 0
