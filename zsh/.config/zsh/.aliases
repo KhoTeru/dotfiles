@@ -15,7 +15,7 @@ alias n="nvim -c 'Neorg workspace main'"
 
 # Kitty
 alias kdiff="kitty +kitten diff"
-alias ksh="kitty +kitten ssh"
+alias kssh="kitty +kitten ssh"
 
 # Network Manager
 alias nmdown="nmcli c down"
