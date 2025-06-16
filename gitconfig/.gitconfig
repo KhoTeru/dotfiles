@@ -3,7 +3,10 @@
 [user]
 	email = 36055140+KhoTeru@users.noreply.github.com
 	name = Teru
+	signingkey = /home/teru/.ssh/id_ed25519.pub
 [core]
 	editor = nvim
 [color]
 	ui = true
+[gpg]
+	format = ssh
