@@ -3,7 +3,7 @@
 [user]
 	email = 36055140+KhoTeru@users.noreply.github.com
 	name = Teru
-	signingkey = F41E371BCC35EC77
+	signingkey = 3BC26E4CFD930235
 [core]
 	editor = nvim
 [color]
