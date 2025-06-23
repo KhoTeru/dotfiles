@@ -55,14 +55,12 @@ source "$ZDOTDIR"/.plugins
 
 eval "$(zoxide init zsh)"
 
-# SSH Agent support
+# GPG TTY update
 
-#if ! pgrep -u "$USER" ssh-agent > /dev/null; then
-#    ssh-agent > "$XDG_RUNTIME_DIR/ssh-agent.env"
-#fi
-#if [ ! -f "$SSH_AUTH_SOCK" ]; then
-#    source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
-#fi
+export GPG_TTY=$TTY
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
+# SSH Agent support
 
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
