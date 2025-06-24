@@ -18,7 +18,7 @@ super + Escape
 
 # Firefox launcher
 super + ctrl + alt + f
-	firejail firefox-nightly
+	firejail firefox
 
 # Mullvad launcher
 super + ctrl + alt + m
