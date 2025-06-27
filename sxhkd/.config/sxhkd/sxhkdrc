@@ -39,7 +39,7 @@ super + ctrl + alt + @l
         xset dpms force off
 
 # Change keyboard layout
-super + alt + space
+super + space
         setxkbmap -query | grep 'es,us' && setxkbmap us,es || setxkbmap es,us
 
 # Flameshot tool
