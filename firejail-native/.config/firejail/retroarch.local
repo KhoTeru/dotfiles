@@ -1,0 +1,3 @@
+# Allow access to saves, states and ROMs
+noblacklist ${HOME}/Sync/Documents/Emulation
+whitelist ${HOME}/Sync/Documents/Emulation
