@@ -25,7 +25,6 @@ alias nmup="nmcli c up"
 if [ "Arch" = "$(lsb_release -i | awk '/Arch/ {print $NF}')" ]; then
         alias paca="pacman -Qdtq | sudo pacman -Rn -"
         alias paci="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}'"
-        alias pacu="sudo pacman -Syu && paru -S $(paru -Qqua | grep -v '\-git' | xargs) && pipx upgrade-all; sudo -k"
 fi
 
 # Other
