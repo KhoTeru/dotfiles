@@ -28,7 +28,6 @@ export XINITRC="$XDG_CONFIG_HOME"/X11/xinitrc
 # Themes
 export GTK_THEME=Arc-Dark
 export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc
-export QT_STYLE_OVERRIDE=kvantum
 export XCURSOR_PATH="$XDG_DATA_HOME"/icons:"$HOME"/.icons:/usr/share/icons
 export FZF_DEFAULT_OPTS='--color=fg:#c0caf5,hl:#ff9e64
 --color=fg+:#c0caf5,hl+:#ff9e64
