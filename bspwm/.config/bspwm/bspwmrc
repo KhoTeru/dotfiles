@@ -31,7 +31,7 @@ feh --bg-scale --no-fehbg "$HOME"/Pictures/masks.png
 polybar.sh bspwm &
 #picom > /tmp/picom.log &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-sleep 5 && dunst > /tmp/dunst.log &
+pidof dunst || dunst > /tmp/dunst.log &
 
 #xset dpms 600 600 600 &
 #xautolock -time 15 -locker "systemctl suspend" -detectsleep &
