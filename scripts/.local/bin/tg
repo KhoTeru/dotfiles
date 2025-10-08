@@ -59,7 +59,7 @@ copy_target()
         else
                 echo -n $IP_ADDRESS | xclip -sel clip >&/dev/null
         fi
-        notify-send -i /usr/share/icons/Papirus-Dark/24x24/panel/network-vpn.svg 'Copy succesful!' 'IP address copied to clipboard' -t 3000
+        notify-send 'Copy succesful!' 'IP address copied to clipboard' -t 3000
 }
 
 print_usage()
