@@ -103,6 +103,7 @@
                 "format-wifi": "<span size=\"x-large\"></span> <span face=\"Inter\" rise=\"2000\">{ipaddr}</span>",
                 "format": "<span size=\"x-large\">󰌙</span> <span face=\"Inter\" rise=\"2000\">Unavailable</span>",
                 "format-disconnected": "<span size=\"x-large\"󰖪</span> <span face=\"Inter\" rise=\"2000\">Disconnected</span>",
+                "on-click-middle": "nm-connection-editor",
                 "tooltip": false
         },
 
