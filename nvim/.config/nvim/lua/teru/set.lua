@@ -13,10 +13,8 @@ vim.opt.smartindent = true
 vim.opt.wrap = false
 
 -- Tabs
-vim.opt.tabstop = 8
-vim.opt.softtabstop = 8
-vim.opt.shiftwidth = 8
-vim.opt.expandtab = true
+-- vim.opt.softtabstop = 8
+-- vim.opt.expandtab = true
 
 -- Important files
 vim.opt.swapfile = false
