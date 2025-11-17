@@ -1,5 +1,13 @@
+* {
+	padding: initial;
+}
+
 window#waybar {
         background-color: transparent;
+}
+
+tooltip label {
+	padding: 15px;
 }
 
 .module {
@@ -14,18 +22,20 @@ window#waybar {
 }
 
 #workspaces {
-        font-size: 18px;
-        background-image: linear-gradient(120deg, rgba(254,166,237,1) 25%, rgba(246,128,132,1) 100%);
+	font-family: "Noto Sans";
+	background-image: linear-gradient(120deg, rgba(254,166,237,1) 25%, rgba(246,128,132,1) 100%);
+}
+
+#workspaces button label {
+	margin: 0px 15px;
+	font-size: 14px;
+	color: #3b4252;
 }
 
 /* Black magic fuckery, leave it like that to maintain consistency on the Workspace module */
 #workspaces button:hover {
         box-shadow: none;
         background: none;
-        border: hidden;
-        text-shadow: unset;
-        transition: none;
-        padding: 0 10px;
 }
 
 #pulseaudio {
@@ -48,6 +58,7 @@ window#waybar {
 }
 
 #tray menu {
+	padding: 5px;
         font-size: 10px;
 }
 
@@ -72,7 +83,6 @@ window#waybar {
 }
 
 /* Configuration for disabled / muted modules */
-
 #pulseaudio.muted, #custom-redlight.off, #idle_inhibitor.deactivated, #custom-target.off, #network.disconnected {
         background-image: none;
         background: #3b4252;
