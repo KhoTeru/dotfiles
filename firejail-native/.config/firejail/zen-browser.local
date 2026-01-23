@@ -1,14 +1,9 @@
-# To enable support for the KeePassXC extension, add the following lines to
-# zen-browser.local
+# Add the following lines to allow access to the .mozilla directory,
+# required by some extensions (like KeePassXC-Browser) to work properly
 noblacklist ${HOME}/.mozilla
+mkdir ${HOME}/.mozilla
 whitelist ${HOME}/.mozilla
 
-# Pipewire pulse support
-whitelist ${RUNUSER}/pipewire-0
-whitelist ${RUNUSER}/pulse/native
-
-# Wayland native
-whitelist ${RUNUSER}/wayland-1
-
-# Private bin
+# Note: Zen Browser requires a shell to launch on Arch and Fedora.
+# Add the next lines to zen-browser.local to enable private-bin.
 private-bin bash,dbus-launch,dbus-send,env,zen-browser,sh,which

@@ -1,16 +1,8 @@
-noblacklist ${HOME}/.zen
-
 # You can enable whitelisting for keepassxc by adding the below to your keepassxc.local.
 # If you do, you MUST store your database under ${HOME}/Documents/KeePassXC/foo.kdbx.
 #mkdir ${HOME}/Sync/Documents/Databases/KeePass
 whitelist ${HOME}/Sync/Documents/Databases/KeePass
 # Needed for KeePassXC-Browser.
-#mkdir ${HOME}/.config/BraveSoftware/Brave-Browser/NativeMessagingHosts
-#mkfile ${HOME}/.config/BraveSoftware/Brave-Browser/NativeMessagingHosts/org.keepassxc.keepassxc_browser.json
-#whitelist ${HOME}/.config/BraveSoftware/Brave-Browser/NativeMessagingHosts/org.keepassxc.keepassxc_browser.json
-mkdir ${HOME}/.zen/native-messaging-hosts
-mkfile ${HOME}/.zen/native-messaging-hosts/org.keepassxc.keepassxc_browser.json
-whitelist ${HOME}/.zen/native-messaging-hosts/org.keepassxc.keepassxc_browser.json
 mkdir ${HOME}/.cache/keepassxc
 mkdir ${HOME}/.config/keepassxc
 whitelist ${HOME}/.cache/keepassxc
