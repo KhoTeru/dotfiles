@@ -38,3 +38,5 @@ alias KDE="/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayla
 
 alias sxp="searchsploit"
 alias nc="nc -v"
+
+alias arec="ffmpeg -f pulse -i default -ac 1 $(date -I).flac"
