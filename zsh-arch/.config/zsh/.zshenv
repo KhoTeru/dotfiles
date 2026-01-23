@@ -20,7 +20,10 @@ export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
 export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 export XINITRC="$XDG_CONFIG_HOME/X11/xinitrc"
+export PYTHON_HISTORY="/dev/null"
 #export PYTHONSTARTUP=/etc/python/pythonrc
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 
 # Themes
 export GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
@@ -49,3 +52,4 @@ export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export OMPI_MCA_opal_warn_on_missing_libcuda="0"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export PROTON_FSR4_UPGRADE=1
