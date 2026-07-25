@@ -40,6 +40,11 @@ export MANROFFOPT="-c"
 # Editor
 export EDITOR="nvim"
 
+# Games
+export PROTON_FSR4_UPGRADE=1
+export PROTON_ENABLE_WAYLAND=1
+export PROTON_ENABLE_HDR=1
+
 # Options for tiling window managers
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
 export AWT_TOOLKIT=MToolKit
@@ -52,4 +57,3 @@ export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export OMPI_MCA_opal_warn_on_missing_libcuda="0"
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-export PROTON_FSR4_UPGRADE=1
