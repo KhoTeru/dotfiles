@@ -60,13 +60,6 @@ eval "$(zoxide init zsh)"
 export GPG_TTY=$TTY
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-# SSH Agent support
-
-unset SSH_AGENT_PID
-if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
-  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
-fi
-
 # Powerlevel10k sourcing
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
 
