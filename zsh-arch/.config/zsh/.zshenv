@@ -10,7 +10,7 @@ export XDG_SCREENSHOTS_DIR="$HOME/Sync/Pictures/Screenshots"
 
 # Path
 export GOPATH="$XDG_DATA_HOME/go"
-export GEM_HOME="$(gem env user_gemhome)"
+#export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GOPATH/bin:$GEM_HOME/bin:$HOME/.local/bin:$HOME/.config/scripts"
 
 # Config directories
