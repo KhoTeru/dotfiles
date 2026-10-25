@@ -55,10 +55,15 @@ source "$ZDOTDIR"/.plugins
 
 eval "$(zoxide init zsh)"
 
-# GPG TTY update
+# Start SSH emulation in GPG agent, set envvars
 
-export GPG_TTY=$TTY
-gpg-connect-agent updatestartuptty /bye >/dev/null
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >&/dev/null
+
+unset SSH_AGENT_PID
+if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+fi
 
 # Powerlevel10k sourcing
 # To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
