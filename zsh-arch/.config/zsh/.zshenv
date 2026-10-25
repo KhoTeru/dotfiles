@@ -40,9 +40,9 @@ export MANROFFOPT="-c"
 # Editor
 export EDITOR="nvim"
 
-# Games
-export PROTON_FSR4_UPGRADE=1
+# Games (enabling Wayland disables Steam Overlay)
 export PROTON_ENABLE_WAYLAND=1
+export PROTON_FSR4_UPGRADE=1
 export PROTON_ENABLE_HDR=1
 
 # Options for tiling window managers
