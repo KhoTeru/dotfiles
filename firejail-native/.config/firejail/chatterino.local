@@ -1,7 +1,2 @@
-## Enable Streamlink settings
-#noblacklist ${HOME}/.config/streamlink
-#whitelist ${HOME}/.config/streamlink
-#private-etc mpv
-##noblacklist /etc/mpv
-##whitelist /etc/mpv
-ignore private-bin
+# Allow Chatterino to communicate with the browser over D-Bus
+dbus-user.talk org.freedesktop.portal.Desktop
