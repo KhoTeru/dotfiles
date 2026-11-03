@@ -19,17 +19,3 @@ vd() {
 mpt() {
         mpv --profile=streamlink "https://twitch.tv/$1"
 }
-
-pacl() {
-	case $1 in
-		n)
-			comm -23 <(pacman -Qen | awk '{print $1}' | sort) <(pacman -Sgq blackarch | sort)
-			;;
-		a)
-			pacman -Qme | awk '{print $1}'
-			;;
-		*)
-			echo 'Use n (native) or a (AUR) as arguments'
-			;;
-	esac
-}
