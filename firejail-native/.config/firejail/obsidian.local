@@ -1,7 +1,3 @@
-# Prevent ~/{Downloads,Documents} from being read
-ignore whitelist ${DOWNLOADS}
-ignore noblacklist ${DOCUMENTS}
-
 # Adds Sync folder
-noblacklist ${HOME}/Sync
-whitelist ${HOME}/Sync
+noblacklist /storage
+whitelist /storage/teru/Syncthing/Sync/Documents/Atenea/Personal/Vault
