@@ -10,7 +10,7 @@ alias lla="eza -laag --color=always --icons=auto --sort=type"
 # Neovim
 alias v="nvim"
 alias vn="vd $XDG_CONFIG_HOME/nvim"
-alias vz="vd $ZDOTDIR"
+alias vs="vd $ZDOTDIR"
 alias n="nvim -c 'Neorg workspace main'"
 
 # Kitty
@@ -22,10 +22,8 @@ alias nmdown="nmcli c down"
 alias nmup="nmcli c up"
 
 # Arch
-if [ "Arch" = "$(lsb_release -i | awk '/Arch/ {print $NF}')" ]; then
-        alias paca="pacman -Qdtq | sudo pacman -Rn -"
-        alias paci="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}'"
-fi
+alias paca="sudo pacman -Rns $(pacman -Qtdq)"
+alias paci="pacman -Qq | fzf --multi --preview 'pacman -Qi {1}'"
 
 # Other
 alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
