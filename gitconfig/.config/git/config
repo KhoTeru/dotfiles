@@ -4,6 +4,9 @@
 	email = 36055140+KhoTeru@users.noreply.github.com
 	name = Teru
 	signingkey = 3BC26E4CFD930235
+
+[bash]
+	showUntrackedFiles = true
 [core]
 	editor = nvim
 [color]
