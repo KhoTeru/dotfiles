@@ -1,5 +1,6 @@
 require("teru.set")
 require("teru.remap")
+require("teru.bplugins")
 require("teru.lazy")
 
 local autocmd = vim.api.nvim_create_autocmd
