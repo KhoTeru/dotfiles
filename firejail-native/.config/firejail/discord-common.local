@@ -1,0 +1,4 @@
+# Allow KDE to open links
+private-bin gdbus
+env XDG_CURRENT_DESKTOP=
+env DE=flatpak
