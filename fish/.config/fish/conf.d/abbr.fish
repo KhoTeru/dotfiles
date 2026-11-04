@@ -19,7 +19,7 @@ abbr --add nmdown "nmcli c down"
 abbr --add nmup "nmcli c up"
 
 # Arch
-abbr --add paca "sudo pacman -Rns $(pacman -Qtdq)"
+abbr --add paca "sudo pacman -Rns (pacman -Qtdq)"
 abbr --add paci "pacman -Qq | fzf --multi --preview 'pacman -Qi {1}'"
 
 # Other
