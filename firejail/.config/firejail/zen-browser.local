@@ -4,6 +4,11 @@ noblacklist ${HOME}/.mozilla
 mkdir ${HOME}/.mozilla
 whitelist ${HOME}/.mozilla
 
+# Add to firejail github?
+# noblacklist ${HOME}/.config/zen
+# mkdir ${HOME}/.config/zen
+# whitelist ${HOME}/.config/zen
+
 # Note: Zen Browser requires a shell to launch on Arch and Fedora.
 # Add the next lines to zen-browser.local to enable private-bin.
 private-bin bash,dbus-launch,dbus-send,env,zen-browser,sh,which
