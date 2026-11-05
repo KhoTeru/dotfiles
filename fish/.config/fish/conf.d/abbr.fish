@@ -26,7 +26,7 @@ abbr --add paci "pacman -Qq | fzf --multi --preview 'pacman -Qi {1}'"
 abbr --add nvidia-settings "nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"
 abbr --add tree "tree -C"
 abbr --add wget "wget --hsts-file=$XDG_DATA_HOME/wget-hsts"
-abbr --add stow "stow -v --no-folding"
+abbr --add stow "stow -v"
 
 abbr --add H "Hyprland"
 abbr --add KDE "/usr/lib/plasma-dbus-run-session-if-needed /usr/bin/startplasma-wayland"
