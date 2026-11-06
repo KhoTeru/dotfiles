@@ -15,3 +15,10 @@
 	gpgsign = true
 [tag]
 	gpgSign = true
+[color "status"]
+	added = "#a9b665"
+	untracked = "#ea6962"
+	changed = "#ea6962"
+	branch = "#a9b665"
+[color "branch"]
+	current = "#a9b665"
