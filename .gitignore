@@ -1,3 +1,6 @@
 # Syncthing files
 .stfolder/
 .stignore
+
+# Fish variables
+fish/.config/fish/fish_variables
