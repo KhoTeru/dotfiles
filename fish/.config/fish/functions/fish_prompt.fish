@@ -27,7 +27,7 @@ function fish_prompt -d "Write out the prompt"
 		else
 			set transient \
 				(set_color $fish_color_normal) " $USER@$hostname" \
-				(set_color $fish_color_keyword) (printf '  '; prompt_pwd --full-length-dirs 3) \
+				(set_color $fish_color_param) (printf '  '; prompt_pwd --full-length-dirs 3) \
 				(set_color $fish_color_comment) (fish_vcs_prompt '  %s')\
 				(set_color --reset) $stat
 	end
