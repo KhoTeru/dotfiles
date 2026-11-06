@@ -4,3 +4,7 @@
 
 # Fish variables
 fish/.config/fish/fish_variables
+
+# GnuPG files except for gpg-agent.conf
+gnupg
+!gnupg/.local/share/gpg-agent.conf
