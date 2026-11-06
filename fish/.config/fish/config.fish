@@ -1,7 +1,7 @@
 # Theme
-fish_config theme choose catppuccin-mocha
-
 if status is-interactive
+	# Set fish theme
+	fish_config theme choose gruvbox-material
 	# Integrate zoxide
 	zoxide init fish | source
 	# Integrate fzf
